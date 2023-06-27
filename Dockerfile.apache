@@ -1,14 +1,10 @@
-# Use the official Apache image as the base
-FROM httpd:latest
+FROM httpd:2.4
 
-# Copy custom Apache configuration files to the container
-COPY ./apache-config/httpd.conf /usr/local/apache2/conf/httpd.conf
-COPY ./apache-config/extra/httpd-vhosts.conf /usr/local/apache2/conf/extra/httpd-vhosts.conf
+# Copy your custom PHP file with connectivity to MySQL
+COPY index.php /usr/local/apache2/htdocs/
 
-# Copy your web content to the container
-COPY ./web-content/ /usr/local/apache2/htdocs/
-
-# Expose port 80 for HTTP traffic
+# Expose port 80
 EXPOSE 80
+
 
 
