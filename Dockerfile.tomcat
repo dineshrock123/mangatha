@@ -1,3 +1,6 @@
+# Use the official Tomcat image
 FROM tomcat:latest
 
-COPY ./myapp.war /usr/local/tomcat/webapps/
+# Expose port 8080
+EXPOSE 8080
+
