@@ -3,10 +3,8 @@ FROM httpd:latest
 
 # Copy your custom Apache configuration files to the container
 COPY ./apache-config/httpd.conf /usr/local/apache2/conf/httpd.conf
-COPY ./apache-config/httpd-vhosts.conf /usr/local/apache2/conf/extra/httpd-vhosts.conf
-
-# Copy your PHP file to the container
-COPY ./php-app/index.php /usr/local/apache2/htdocs/
+COPY ./apache-config/extra/httpd-vhosts.conf /usr/local/apache2/conf/extra/httpd-vhosts.conf
 
 # Expose port 80
 EXPOSE 80
+
